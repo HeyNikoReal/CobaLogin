@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 public class LoginActivity extends AppCompatActivity {
@@ -13,6 +14,7 @@ public class LoginActivity extends AppCompatActivity {
     private Button btnLogin;
     private String username, password;
     KendaliLogin KL = new KendaliLogin();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,13 +27,14 @@ public class LoginActivity extends AppCompatActivity {
     public void prosesLogin(View view) {
         username = etUsername.getText().toString();
         password = etPassword.getText().toString();
-        if(username.equals("admin") && password.equals("admin")){
-            KL.setPref(LoginActivity.this, "spPadang",username);
+
+        if (username.equals("nicholas") && password.equals("2125250032")) {
+            KL.setPref(LoginActivity.this, "spPadang", "Nicholas");
+            KL.setPref(LoginActivity.this, "spPadangs", "Niko");
             startActivity(new Intent(LoginActivity.this,
                     MainActivity.class));
             finish();
-        }
-        else{
+        } else {
             Toast.makeText(this, "Login Gagal",
                     Toast.LENGTH_SHORT).show();
         }
